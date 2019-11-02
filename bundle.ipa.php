@@ -13,7 +13,7 @@ $ipaUrl = $_GET["ipa_url"];
 $components = parse_url($ipaUrl);
 
 if ($components['scheme'] !== 'https' || 
-	$components['host'] !== BUNDLE_HOST) {
+	$components['host'] !== $BUNDLE_HOST) {
         http_response_code(500);
         echo "ipa_url is not allowed!";
         return;
