@@ -15,7 +15,7 @@
 <body>
     <div>
 
-        <form action="index.php" method="post">
+        <form action="select.php" method="post">
             URL to IPA: <input type="string" name="ipa_url"><br>
             <input type="submit">
         </form>
@@ -25,9 +25,9 @@
 
         if (!empty($ipa_url)) :
             ?>
-            <a href="itms-services://?action=download-manifest&url=https://download.integreat-app.de/ios/manifest.plist.php?ipa_url=https://build.integreat-app.de/job/integreat-react-native-app/job/develop/<?php echo $ipa_url ?>/artifact/output/export/Integreat.ipa">
+            <a href="itms-services://?action=download-manifest&url=<?php $BASE_URL ?>/manifest.plist.php?ipa_url=<?php echo $ipa_url ?>">
                 Install Integreat
-            </a>egreat-react-native-app/job/develop/
+            </a>
         <?php endif ?>
     </div>
 </body>

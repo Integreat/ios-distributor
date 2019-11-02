@@ -8,7 +8,7 @@ if(!isset($_GET['ipa_url'])) {
 
 $ipaUrl = $_GET["ipa_url"];
 
-$proxiedIpaUrl = "https://download.integreat-app.de/ios/bundle.ipa.php" . "?" . http_build_query(array('ipa_url' => $ipaUrl));
+$proxiedIpaUrl = "$BASE_URL/bundle.ipa.php" . "?" . http_build_query(array('ipa_url' => $ipaUrl));
 
 header("Content-type: application/xml");
 
