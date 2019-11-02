@@ -1,8 +1,8 @@
 <?php
 
-include('config.php')
+include('config.php');
 
-if(!isset($_GET['ipa_url'])) {
+if (!isset($_GET['ipa_url'])) {
         http_response_code(500);
         echo "You need to supply a GET parameter called ipa_url!";
         return;
@@ -31,4 +31,3 @@ $context = stream_context_create([
 ]);
 
 echo file_get_contents($ipaUrl, false, $context);
-?>

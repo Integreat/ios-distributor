@@ -21,7 +21,7 @@
         </form>
 
         <?php
-            $ipa_url=$_POST['ipa_url'] || $_GET['ipa_url'];
+        $ipa_url = $_POST['ipa_url'] || $_GET['ipa_url'];
 
         if (!empty($ipa_url)) :
             ?>
