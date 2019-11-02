@@ -1,3 +1,8 @@
+<?php
+include('config.php');
+$ipa_url = $_POST['ipa_url'] ?: $_GET['ipa_url'];
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -21,11 +26,9 @@
         </form>
 
         <?php
-        $ipa_url = $_POST['ipa_url'] || $_GET['ipa_url'];
-
         if (!empty($ipa_url)) :
             ?>
-            <a href="itms-services://?action=download-manifest&url=<?php $BASE_URL ?>/manifest.plist.php?ipa_url=<?php echo $ipa_url ?>">
+            <a href="itms-services://?action=download-manifest&url=<?php echo $BASE_URL; ?>/manifest.plist.php?ipa_url=<?php echo $ipa_url; ?>">
                 Install Integreat
             </a>
         <?php endif ?>

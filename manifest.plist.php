@@ -1,5 +1,7 @@
 <?php
 
+require('config.php');
+
 if(!isset($_GET['ipa_url'])) {
 	http_response_code(500);
 	echo "You need to supply a GET parameter called ipa_url!";

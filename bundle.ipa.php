@@ -1,6 +1,6 @@
 <?php
 
-include('config.php');
+require('config.php');
 
 if (!isset($_GET['ipa_url'])) {
         http_response_code(500);
