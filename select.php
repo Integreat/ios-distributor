@@ -19,16 +19,24 @@ $ipa_url = $_POST['ipa_url'] ?: $_GET['ipa_url'];
 
 <body>
     <div>
-
         <form action="select.php" method="post">
-            URL to IPA: <input type="string" name="ipa_url"><br>
+            URL to IPA: <input type="text" name="ipa_url"><br>
             <input type="submit">
         </form>
 
         <?php
         if (!empty($ipa_url)) :
+            $ipa_query = http_build_query(array(
+                'ipa_url' => $ipa_url
+            ));
+
+            $itunes_query = http_build_query(array(
+                'action' => "download-manifest",
+                'url' => $BASE_URL . "/manifest.plist.php?" . $ipa_query
+            ));
             ?>
-            <a href="itms-services://?action=download-manifest&url=<?php echo $BASE_URL; ?>/manifest.plist.php?ipa_url=<?php echo $ipa_url; ?>">
+
+            <a class="install-link" href="itms-services://?<?php echo $itunes_query; ?>">
                 Install Integreat
             </a>
         <?php endif ?>
